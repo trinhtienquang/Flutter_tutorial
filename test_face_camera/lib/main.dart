@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class FaceCaptureScreen extends StatefulWidget {
+  const FaceCaptureScreen({super.key});
   @override
   State<FaceCaptureScreen> createState() => _FaceCaptureScreenState();
 }
@@ -39,7 +40,6 @@ class _FaceCaptureScreenState extends State<FaceCaptureScreen> {
           print('Đường dẫn ảnh: ${image.path}');
         }
       },
-      
     );
   }
 
