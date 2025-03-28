@@ -13,7 +13,8 @@ class ResultsScreen extends StatelessWidget {
   final List<String> chosenAnswers;
   final Function() onTap;
 
-  List<Map<String, Object>> getSummaryData() {
+  //sử dụng getter
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < chosenAnswers.length; i++) {
@@ -27,9 +28,24 @@ class ResultsScreen extends StatelessWidget {
     return summary;
   }
 
+  //sử dụng function
+  // List<Map<String, Object>> getSummaryData() {
+  //   final List<Map<String, Object>> summary = [];
+
+  //   for (var i = 0; i < chosenAnswers.length; i++) {
+  //     summary.add({
+  //       'question_index': i,
+  //       'question': quetsions[i].text,
+  //       'correct_answer': quetsions[i].answers[0],
+  //       'user_answer': chosenAnswers[i],
+  //     });
+  //   }
+  //   return summary;
+  // }
+
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
+    // final summaryData = getSummaryData(); //nếu sử dụng getter thì bỏ cái này
     final numTotalQuestions = quetsions.length;
     final numCorrectQuestions =
         summaryData.where((data) {
